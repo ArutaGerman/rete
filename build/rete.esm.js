@@ -262,6 +262,8 @@ function () {
 
     _defineProperty(this, "data", {});
 
+    _defineProperty(this, "collapsed", false);
+
     _defineProperty(this, "meta", {});
 
     this.name = name;
@@ -349,7 +351,8 @@ function () {
         'inputs': reduceIO(this.inputs),
         'outputs': reduceIO(this.outputs),
         'position': this.position,
-        'name': this.name
+        'name': this.name,
+        'collapsed': this.collapsed
       };
     }
   }], [{
@@ -376,6 +379,7 @@ function () {
       node.data = json.data;
       node.position = [x, y];
       node.name = json.name;
+      node.collapsed = json.collapsed;
       Node.latestId = Math.max(node.id, Node.latestId);
       return node;
     }
@@ -1175,6 +1179,7 @@ function (_Emitter) {
         connection: this.connection,
         points: this.getPoints()
       });
+      console.log(this.el);
     }
   }]);
 
@@ -1537,10 +1542,11 @@ function (_Emitter) {
     key: "click",
     value: function click(e) {
       var container = this.container;
-      if (container !== e.target) return;
+      // if (container !== e.target) return;
       if (!this.trigger('click', {
         e: e,
-        container: container
+        container: container,
+        target: e.target
       })) return;
     }
     }, {

@@ -16,6 +16,7 @@ export declare class Node {
     meta: {
         [key: string]: unknown;
     };
+    collapsed: boolean;
     static latestId: number;
     constructor(name: string);
     _add<T extends any>(list: Map<string, T>, item: T, prop: string): void;
