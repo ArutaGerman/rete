@@ -1179,7 +1179,6 @@ function (_Emitter) {
         connection: this.connection,
         points: this.getPoints()
       });
-      console.log(this.el);
     }
   }]);
 
