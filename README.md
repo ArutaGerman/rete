@@ -13,7 +13,7 @@ Introduction
 CHANGES
 ----
 - New events:
-  - dblclick - double click with the left mouse button
+  - dblclick - double click with the left mouse button not changing zoom now, but you can use it on a nodes
   - connectionclick - now you can click to connections
 
 Documentation
