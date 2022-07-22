@@ -1146,11 +1146,19 @@ function (_Emitter) {
     _this.el = document.createElement('div');
     _this.el.style.position = 'absolute';
     _this.el.style.zIndex = '-1';
+    _this.el.classList.add('connection-wrapper');
 
     _this.trigger('renderconnection', {
       el: _this.el,
       connection: _this.connection,
       points: _this.getPoints()
+    });
+
+    _this.el.addEventListener('click', function() {
+      return _this.trigger('connectionclick', {
+        el: _this.el,
+        connection: _this.connection
+      });
     });
 
     return _this;
@@ -1641,6 +1649,7 @@ function (_Events) {
       rendersocket: [],
       rendercontrol: [],
       renderconnection: [],
+      connectionclick: [],
       updateconnection: [],
       keydown: [],
       keyup: [],

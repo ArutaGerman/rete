@@ -14,6 +14,7 @@ export declare class EditorEvents extends Events {
 }
 export interface EventsTypes extends DefaultEventsTypes {
     componentregister: Component;
+    dblclick: void,
     nodecreate: Node;
     nodecreated: Node;
     noderemove: Node;
@@ -22,6 +23,7 @@ export interface EventsTypes extends DefaultEventsTypes {
         input: Input;
         output: Output;
     };
+    connectionclick: Connection,
     connectioncreated: Connection;
     connectionremove: Connection;
     connectionremoved: Connection;
