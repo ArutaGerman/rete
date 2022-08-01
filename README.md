@@ -8,6 +8,8 @@ Rete.js  [![Build Status](https://travis-ci.org/retejs/rete.svg?branch=master)](
 
 Introduction
 ----
+THIS IS A CUSTOM RETE.JS. If you need original - go to rete.js(https://github.com/retejs/rete)  
+
 **Rete** is a modular framework for visual programming. **Rete** allows you to create node-based editor directly in the browser. You can define nodes and workers that allow users to create instructions for processing data in your editor without a single line of code.
 
 CHANGES
@@ -15,6 +17,33 @@ CHANGES
 - New events:
   - dblclick - double click with the left mouse button not changing zoom now, but you can use it on a nodes
   - connectionclick - now you can click to connections
+
+How to use an event: 
+I. 'connectionclick': 
+  1.  In the file with rete settings add:
+      ```
+      editor.on('renderconnection', (connection) => {
+        const { el } = connection;
+        el.classList.add('connection-wrapper');
+      });
+      ```
+
+      and then you can use `connectionclick` event
+      ```
+        editor.on('connectionclick', (connection) => {
+          // your code
+          console.log('connectionclick');
+        }
+      ```
+  2. In `ComponentFileWhereReteInit.vue` you could setup css styles for `connection-wrapper` class. 
+      Example:
+      ```
+        .connection-wrapper {
+          svg:hover {
+            cursor: pointer;
+          }
+        }
+      ```
 
 Documentation
 ----

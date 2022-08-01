@@ -1146,7 +1146,6 @@ function (_Emitter) {
     _this.el = document.createElement('div');
     _this.el.style.position = 'absolute';
     _this.el.style.zIndex = '-1';
-    _this.el.classList.add('connection-wrapper');
 
     _this.trigger('renderconnection', {
       el: _this.el,
